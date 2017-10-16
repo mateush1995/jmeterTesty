@@ -1,0 +1,2207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Plan testów" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Zmienne zdefiniowane przez użytkownika" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Grupa wątków" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <longProp name="ThreadGroup.start_time">1508153661000</longProp>
+        <longProp name="ThreadGroup.end_time">1508153661000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Zmienne zdefiniowane przez użytkownika" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">wp.pl</stringProp>
+          <stringProp name="HTTPSampler.port">80</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="TestPlan.comments">Recorded:0ms</stringProp>
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2 /" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="TestPlan.comments">Recorded:6707ms</stringProp>
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3 /" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Detected a redirect from the previous sample</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="TestPlan.comments">Recorded:10699ms</stringProp>
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5 /" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="TestPlan.comments">Recorded:8777ms</stringProp>
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="6 /x0narxFgEVFBAF0RaRQMV0EWAhI1CxFSQxEAHSQOHB4EEk0ddjBAdQEsFC00LStVWwAUSCkMLnogCwNIHCA-elw3PQ0PIzZGHS88QHIyGkAJOwgTICU8WAgRCwl0XytDI1YGNzIDDFwrBRg9EB4xURpWNAI1KDFoJjEBOjEhFGM5VTcZMhI_ZFcEHCIhNCAEDS4YOSJQK3UfChwrdCIqSCYNESEOHwxcAhYwFiAFAgU7VTMWdzBPYStRJjACARdXBSYKCXU-KAUfVAROIlMoAgETIU0SIj4JKgAWMB8-M189BwMCLh82flkuHT8HEBlABjkjD34_Els-CCMIHiNAdRlVJygPHUxcKRI1ExVQKXcNJEA2HjEoBRkmOgkWHx17NBAxLQsjMAQgWT0zcSgPQS9VBzYkC0FSXC4wDw1UT1oiEzlMHzEwej8PGE8PIEpaLzsxNjwDNAgMJzUpD14VRScmODl0Wkk=/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/x0narxFgEVFBAF0RaRQMV0EWAhI1CxFSQxEAHSQOHB4EEk0ddjBAdQEsFC00LStVWwAUSCkMLnogCwNIHCA-elw3PQ0PIzZGHS88QHIyGkAJOwgTICU8WAgRCwl0XytDI1YGNzIDDFwrBRg9EB4xURpWNAI1KDFoJjEBOjEhFGM5VTcZMhI_ZFcEHCIhNCAEDS4YOSJQK3UfChwrdCIqSCYNESEOHwxcAhYwFiAFAgU7VTMWdzBPYStRJjACARdXBSYKCXU-KAUfVAROIlMoAgETIU0SIj4JKgAWMB8-M189BwMCLh82flkuHT8HEBlABjkjD34_Els-CCMIHiNAdRlVJygPHUxcKRI1ExVQKXcNJEA2HjEoBRkmOgkWHx17NBAxLQsjMAQgWT0zcSgPQS9VBzYkC0FSXC4wDw1UT1oiEzlMHzEwej8PGE8PIEpaLzsxNjwDNAgMJzUpD14VRScmODl0Wkk=/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="X-Moz" elementType="Header">
+                  <stringProp name="Header.name">X-Moz</stringProp>
+                  <stringProp name="Header.value">prefetch</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="8 /3ioQkD6mVUZdfllqB1wdWFh-DyFFBkcGH38GLVhDUBocbj8CQFtdLQIWX3RXOX1aNjMYIXQvRFhWCyQ2cA90Bi0VXSNBJUIMNxNTM2AoAzMMCAAhbx9CPFtjGDNRF1wNLWUbFwIZdFkLFVsudF9xGAljHwZ-J0UCPiAMElFdASwnHS0hXl1JIAYLXRJnVQccAQUoPX43UCAdZxsyAzp9AwQ1IghdCGMdA2MhPA8mYBAqYRsqACt8KwEgIQ4GFWUQFWheHlRdRy0kHBsDb1ViHxgyDBBGLnE4F2IHAEE1SSIAZAgWegd_OCJoWyh-GF8iIRUbDAYDal8fNQAVWSwAAiglXQh5VHIcFRUBJnQUBSIpHx8WdDhUGBtpBAdeDwcTAgAxdH8edAoJJRooRh9KBS0UCnVYP1cOGzpfPEJeexgZPlkdUTp6EycaAAZeHwAtIxstIHU0AwM1Ay0McwRjJAo8DSdEVHkNPjgzAXsfeiUZOyYTeD9ROj0XAi1dOUIOKCAudFsicA0pZAkRZR51A1wmOjwPWXInADkHFngIZiM1aB8eYDVmCipnBzJeG0EtXmEjEFoKfV4mGi4VVAJePyEjXTBkOX0nHRM6NWAjQiwNGC51cj94AzolLy5lHHszVmApJWMUQiIqGCcgRAVwAgllPHVwHnwhJRcCCWxfdgUXEiwBRCUDACFnXxd6IGIeXx0_En8fAS84KV8UQVRpIiFkUxEFF3gOHjZaFHo6SVsEYScODjwGHBw6HBBVHl4lHGAzdwE0dDo5YRIwbi4AXD0lLyhyGWYlHhc_N0U8dw4laVsiYFp1Chs1BT1GAl0aP2lZElAOQQwlYClzdSlwCgJiJCx9W2kjKzc7BlwmdFkrOSARfBR-BzcJWR1dDFE_PBUCcAEEVygcNggJd19QGFY3JBVBJWNePStaDkwYcVsJAhNyRxxgCgcnGxQHCnABHhBZCU46Rj4gNQ4dcB11MCkCIw9VDkIYFwAbNQEMQwUqFls3AgBaChcWPBJwCwNYLB8JAUEZYREMBl4xd1xGLC4SXylGP0FbIyQcDlMeYhwNPh4GfT9XCCchCgBxC3wPDTc9cUcMSyYKaBMLWi5FJCdgCihVAFouIxshCwEVA1EEIiAudAxQPQYgLA9zN2QTBCcdN0ZcBF88OTkWAVhpWTkZKnNiO18DKys7KGZefCceGggwYyZCL15oOAdZGQYqNxsRFm4deg9ZITsHYx5BHg0kAQIFP1s9JCsiKnIHcT0cFwAMfygEKj5gXA9DPlYMHgEgF2QZCxFfZyYDWTxpAgQXWxN-GwMTNgkfLHAcAz8GCB4WTCdJCFsFIzRiJEAYXAISAF4oUiwVNSh2cBlQEFs8Bgx7A0IRAiIMB0wEUholHigcTBtlUQwyWyJQGGIrPj4jFwUJZVoANxo9eysDDDkrOHVUXUI_LgU6Ln0KaSEOaQIPfjcBHTo2CQlDO0QPXDUkdE4PABNYYwkOdB9mGVsCUyV1KQQjKBoOIAA9eVAOBT0RDihlUQ0jUgpfNUpfVj5fAkcJCgUuGjxwcSJiUSo7ADNAPVEQNwY9cnQaVAgMNx4PXgRdEQYzPnJ5PUI_HAkoEl0uewgCBCA1XjV2Xjs5IQ10CUUjHDscEVgYd1kVHQYBdQhLKwMCGzdeC2ARFgA9J1UKWQRWYQQOcV9qOyATHAcPOFxeLAY5PFcUQypZaVIpYixxCFwVExdaHAYjJzI5EXlUfAUZJjgjQD9SWyodEQxXBH48JSRaKXknADM-JgUlTiZEIjphGS1FHkQxLCE_MUZVWg9bOigPf1hAExo5Ew9mP0IdDRUycFAISgUdIl0BXQx0JSY3Aw5DOFAROBMxCWEJSywdOhoofhdeBFowOhNBFEcZIDZdFk4lZAhfZiMwUjlYDCMAO3RDLwUiAgQFIgA-AiwWMix1WTpGJR1mAhUALEQmOjQHL10r/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/3ioQkD6mVUZdfllqB1wdWFh-DyFFBkcGH38GLVhDUBocbj8CQFtdLQIWX3RXOX1aNjMYIXQvRFhWCyQ2cA90Bi0VXSNBJUIMNxNTM2AoAzMMCAAhbx9CPFtjGDNRF1wNLWUbFwIZdFkLFVsudF9xGAljHwZ-J0UCPiAMElFdASwnHS0hXl1JIAYLXRJnVQccAQUoPX43UCAdZxsyAzp9AwQ1IghdCGMdA2MhPA8mYBAqYRsqACt8KwEgIQ4GFWUQFWheHlRdRy0kHBsDb1ViHxgyDBBGLnE4F2IHAEE1SSIAZAgWegd_OCJoWyh-GF8iIRUbDAYDal8fNQAVWSwAAiglXQh5VHIcFRUBJnQUBSIpHx8WdDhUGBtpBAdeDwcTAgAxdH8edAoJJRooRh9KBS0UCnVYP1cOGzpfPEJeexgZPlkdUTp6EycaAAZeHwAtIxstIHU0AwM1Ay0McwRjJAo8DSdEVHkNPjgzAXsfeiUZOyYTeD9ROj0XAi1dOUIOKCAudFsicA0pZAkRZR51A1wmOjwPWXInADkHFngIZiM1aB8eYDVmCipnBzJeG0EtXmEjEFoKfV4mGi4VVAJePyEjXTBkOX0nHRM6NWAjQiwNGC51cj94AzolLy5lHHszVmApJWMUQiIqGCcgRAVwAgllPHVwHnwhJRcCCWxfdgUXEiwBRCUDACFnXxd6IGIeXx0_En8fAS84KV8UQVRpIiFkUxEFF3gOHjZaFHo6SVsEYScODjwGHBw6HBBVHl4lHGAzdwE0dDo5YRIwbi4AXD0lLyhyGWYlHhc_N0U8dw4laVsiYFp1Chs1BT1GAl0aP2lZElAOQQwlYClzdSlwCgJiJCx9W2kjKzc7BlwmdFkrOSARfBR-BzcJWR1dDFE_PBUCcAEEVygcNggJd19QGFY3JBVBJWNePStaDkwYcVsJAhNyRxxgCgcnGxQHCnABHhBZCU46Rj4gNQ4dcB11MCkCIw9VDkIYFwAbNQEMQwUqFls3AgBaChcWPBJwCwNYLB8JAUEZYREMBl4xd1xGLC4SXylGP0FbIyQcDlMeYhwNPh4GfT9XCCchCgBxC3wPDTc9cUcMSyYKaBMLWi5FJCdgCihVAFouIxshCwEVA1EEIiAudAxQPQYgLA9zN2QTBCcdN0ZcBF88OTkWAVhpWTkZKnNiO18DKys7KGZefCceGggwYyZCL15oOAdZGQYqNxsRFm4deg9ZITsHYx5BHg0kAQIFP1s9JCsiKnIHcT0cFwAMfygEKj5gXA9DPlYMHgEgF2QZCxFfZyYDWTxpAgQXWxN-GwMTNgkfLHAcAz8GCB4WTCdJCFsFIzRiJEAYXAISAF4oUiwVNSh2cBlQEFs8Bgx7A0IRAiIMB0wEUholHigcTBtlUQwyWyJQGGIrPj4jFwUJZVoANxo9eysDDDkrOHVUXUI_LgU6Ln0KaSEOaQIPfjcBHTo2CQlDO0QPXDUkdE4PABNYYwkOdB9mGVsCUyV1KQQjKBoOIAA9eVAOBT0RDihlUQ0jUgpfNUpfVj5fAkcJCgUuGjxwcSJiUSo7ADNAPVEQNwY9cnQaVAgMNx4PXgRdEQYzPnJ5PUI_HAkoEl0uewgCBCA1XjV2Xjs5IQ10CUUjHDscEVgYd1kVHQYBdQhLKwMCGzdeC2ARFgA9J1UKWQRWYQQOcV9qOyATHAcPOFxeLAY5PFcUQypZaVIpYixxCFwVExdaHAYjJzI5EXlUfAUZJjgjQD9SWyodEQxXBH48JSRaKXknADM-JgUlTiZEIjphGS1FHkQxLCE_MUZVWg9bOigPf1hAExo5Ew9mP0IdDRUycFAISgUdIl0BXQx0JSY3Aw5DOFAROBMxCWEJSywdOhoofhdeBFowOhNBFEcZIDZdFk4lZAhfZiMwUjlYDCMAO3RDLwUiAgQFIgA-AiwWMix1WTpGJR1mAhUALEQmOjQHL10r/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="X-Moz" elementType="Header">
+                  <stringProp name="Header.name">X-Moz</stringProp>
+                  <stringProp name="Header.value">prefetch</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="7 /zWa05NwcEzZOURonWBAOME5HRSQEDxM1TEBCPlkJCWgEAGJ2Mgw3MTRCfx0SVhsxUV9eGD0tECZRanIIPVEsGBR5cQABEDQZWQRgLAcEIC0KVncKHwUKLhACDR0ELk0jLkRROhsmHj0kZkwHFhdNERtDegcvKyokI0dzIiQ0ThIAREAJI1ofOTtXZhZDADU9IFQCHTISETkyAnAcDysWNDh4TTobDw0VD1ZXNEI2ThYPAWJ5JiZKAyl0UyEQCD0vEANsHkISTyFXVAEeRQwIBFRkcAhOJxszKWlsBRgwHCYbWE0AOVQ1OCZxQi8HCyIGFghtJBwzEwYRaHF2MhROAjF5T3obJAkQCmMCHzAAP2UvaGMeQhQ9HxBgTSs8OQsUNH1xBkMtQhgqB3o5BiJOIi9SWXcVUTUVFnsGeR0vCBxVaWMGPTIUPVZ5cnwdIiAUL0pRAk8BPBAweQwjAio9HSACTB4NXks=/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/zWa05NwcEzZOURonWBAOME5HRSQEDxM1TEBCPlkJCWgEAGJ2Mgw3MTRCfx0SVhsxUV9eGD0tECZRanIIPVEsGBR5cQABEDQZWQRgLAcEIC0KVncKHwUKLhACDR0ELk0jLkRROhsmHj0kZkwHFhdNERtDegcvKyokI0dzIiQ0ThIAREAJI1ofOTtXZhZDADU9IFQCHTISETkyAnAcDysWNDh4TTobDw0VD1ZXNEI2ThYPAWJ5JiZKAyl0UyEQCD0vEANsHkISTyFXVAEeRQwIBFRkcAhOJxszKWlsBRgwHCYbWE0AOVQ1OCZxQi8HCyIGFghtJBwzEwYRaHF2MhROAjF5T3obJAkQCmMCHzAAP2UvaGMeQhQ9HxBgTSs8OQsUNH1xBkMtQhgqB3o5BiJOIi9SWXcVUTUVFnsGeR0vCBxVaWMGPTIUPVZ5cnwdIiAUL0pRAk8BPBAweQwjAio9HSACTB4NXks=/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="X-Moz" elementType="Header">
+                  <stringProp name="Header.name">X-Moz</stringProp>
+                  <stringProp name="Header.value">prefetch</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="9 /x0narxFgEVFBAF0RaRQMV0EWAhI1CxFSQxEAHSQOHB4EEk0ddjBAdQEsFC00LStVWwAUSCkMLnogCwNIHCA-elw3PQ0PIzZGHS88QHIyGkAJOwgTICU8WAgRCwl0XytDI1YGNzIDDFwrBRg9EB4xURpWNAI1KDFoJjEBOjEhFGM5VTcZMhI_ZFcEHCIhNCAEDS4YOSJQK3UfChwrdCIqSCYNESEOHwxcAhYwFiAFAgU7VTMWdzBPYStRJjACARdXBSYKCXU-KAUfVAROIlMoAgETIU0SIj4JKgAWMB8-M189BwMCLh82flkuHT8HEBlABjkjD34_Els-CCMIHiNAdRlVJygPHUxcKRI1ExVQKXcNJEA2HjEoBRkmOgkWHx17NBAxLQsjMAQgWT0zcSgPQS9VBzYkC0FSXC4wDw1UT1oiEzlMHzEwej8PGE8PIEpaLzsxNjwDNAgMJzUpD14VRScmODl0Wkk=/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/x0narxFgEVFBAF0RaRQMV0EWAhI1CxFSQxEAHSQOHB4EEk0ddjBAdQEsFC00LStVWwAUSCkMLnogCwNIHCA-elw3PQ0PIzZGHS88QHIyGkAJOwgTICU8WAgRCwl0XytDI1YGNzIDDFwrBRg9EB4xURpWNAI1KDFoJjEBOjEhFGM5VTcZMhI_ZFcEHCIhNCAEDS4YOSJQK3UfChwrdCIqSCYNESEOHwxcAhYwFiAFAgU7VTMWdzBPYStRJjACARdXBSYKCXU-KAUfVAROIlMoAgETIU0SIj4JKgAWMB8-M189BwMCLh82flkuHT8HEBlABjkjD34_Els-CCMIHiNAdRlVJygPHUxcKRI1ExVQKXcNJEA2HjEoBRkmOgkWHx17NBAxLQsjMAQgWT0zcSgPQS9VBzYkC0FSXC4wDw1UT1oiEzlMHzEwej8PGE8PIEpaLzsxNjwDNAgMJzUpD14VRScmODl0Wkk=/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="11 /3ioQkD6mVUZdfllqB1wdWFh-DyFFBkcGH38GLVhDUBocbj8CQFtdLQIWX3RXOX1aNjMYIXQvRFhWCyQ2cA90Bi0VXSNBJUIMNxNTM2AoAzMMCAAhbx9CPFtjGDNRF1wNLWUbFwIZdFkLFVsudF9xGAljHwZ-J0UCPiAMElFdASwnHS0hXl1JIAYLXRJnVQccAQUoPX43UCAdZxsyAzp9AwQ1IghdCGMdA2MhPA8mYBAqYRsqACt8KwEgIQ4GFWUQFWheHlRdRy0kHBsDb1ViHxgyDBBGLnE4F2IHAEE1SSIAZAgWegd_OCJoWyh-GF8iIRUbDAYDal8fNQAVWSwAAiglXQh5VHIcFRUBJnQUBSIpHx8WdDhUGBtpBAdeDwcTAgAxdH8edAoJJRooRh9KBS0UCnVYP1cOGzpfPEJeexgZPlkdUTp6EycaAAZeHwAtIxstIHU0AwM1Ay0McwRjJAo8DSdEVHkNPjgzAXsfeiUZOyYTeD9ROj0XAi1dOUIOKCAudFsicA0pZAkRZR51A1wmOjwPWXInADkHFngIZiM1aB8eYDVmCipnBzJeG0EtXmEjEFoKfV4mGi4VVAJePyEjXTBkOX0nHRM6NWAjQiwNGC51cj94AzolLy5lHHszVmApJWMUQiIqGCcgRAVwAgllPHVwHnwhJRcCCWxfdgUXEiwBRCUDACFnXxd6IGIeXx0_En8fAS84KV8UQVRpIiFkUxEFF3gOHjZaFHo6SVsEYScODjwGHBw6HBBVHl4lHGAzdwE0dDo5YRIwbi4AXD0lLyhyGWYlHhc_N0U8dw4laVsiYFp1Chs1BT1GAl0aP2lZElAOQQwlYClzdSlwCgJiJCx9W2kjKzc7BlwmdFkrOSARfBR-BzcJWR1dDFE_PBUCcAEEVygcNggJd19QGFY3JBVBJWNePStaDkwYcVsJAhNyRxxgCgcnGxQHCnABHhBZCU46Rj4gNQ4dcB11MCkCIw9VDkIYFwAbNQEMQwUqFls3AgBaChcWPBJwCwNYLB8JAUEZYREMBl4xd1xGLC4SXylGP0FbIyQcDlMeYhwNPh4GfT9XCCchCgBxC3wPDTc9cUcMSyYKaBMLWi5FJCdgCihVAFouIxshCwEVA1EEIiAudAxQPQYgLA9zN2QTBCcdN0ZcBF88OTkWAVhpWTkZKnNiO18DKys7KGZefCceGggwYyZCL15oOAdZGQYqNxsRFm4deg9ZITsHYx5BHg0kAQIFP1s9JCsiKnIHcT0cFwAMfygEKj5gXA9DPlYMHgEgF2QZCxFfZyYDWTxpAgQXWxN-GwMTNgkfLHAcAz8GCB4WTCdJCFsFIzRiJEAYXAISAF4oUiwVNSh2cBlQEFs8Bgx7A0IRAiIMB0wEUholHigcTBtlUQwyWyJQGGIrPj4jFwUJZVoANxo9eysDDDkrOHVUXUI_LgU6Ln0KaSEOaQIPfjcBHTo2CQlDO0QPXDUkdE4PABNYYwkOdB9mGVsCUyV1KQQjKBoOIAA9eVAOBT0RDihlUQ0jUgpfNUpfVj5fAkcJCgUuGjxwcSJiUSo7ADNAPVEQNwY9cnQaVAgMNx4PXgRdEQYzPnJ5PUI_HAkoEl0uewgCBCA1XjV2Xjs5IQ10CUUjHDscEVgYd1kVHQYBdQhLKwMCGzdeC2ARFgA9J1UKWQRWYQQOcV9qOyATHAcPOFxeLAY5PFcUQypZaVIpYixxCFwVExdaHAYjJzI5EXlUfAUZJjgjQD9SWyodEQxXBH48JSRaKXknADM-JgUlTiZEIjphGS1FHkQxLCE_MUZVWg9bOigPf1hAExo5Ew9mP0IdDRUycFAISgUdIl0BXQx0JSY3Aw5DOFAROBMxCWEJSywdOhoofhdeBFowOhNBFEcZIDZdFk4lZAhfZiMwUjlYDCMAO3RDLwUiAgQFIgA-AiwWMix1WTpGJR1mAhUALEQmOjQHL10r/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/3ioQkD6mVUZdfllqB1wdWFh-DyFFBkcGH38GLVhDUBocbj8CQFtdLQIWX3RXOX1aNjMYIXQvRFhWCyQ2cA90Bi0VXSNBJUIMNxNTM2AoAzMMCAAhbx9CPFtjGDNRF1wNLWUbFwIZdFkLFVsudF9xGAljHwZ-J0UCPiAMElFdASwnHS0hXl1JIAYLXRJnVQccAQUoPX43UCAdZxsyAzp9AwQ1IghdCGMdA2MhPA8mYBAqYRsqACt8KwEgIQ4GFWUQFWheHlRdRy0kHBsDb1ViHxgyDBBGLnE4F2IHAEE1SSIAZAgWegd_OCJoWyh-GF8iIRUbDAYDal8fNQAVWSwAAiglXQh5VHIcFRUBJnQUBSIpHx8WdDhUGBtpBAdeDwcTAgAxdH8edAoJJRooRh9KBS0UCnVYP1cOGzpfPEJeexgZPlkdUTp6EycaAAZeHwAtIxstIHU0AwM1Ay0McwRjJAo8DSdEVHkNPjgzAXsfeiUZOyYTeD9ROj0XAi1dOUIOKCAudFsicA0pZAkRZR51A1wmOjwPWXInADkHFngIZiM1aB8eYDVmCipnBzJeG0EtXmEjEFoKfV4mGi4VVAJePyEjXTBkOX0nHRM6NWAjQiwNGC51cj94AzolLy5lHHszVmApJWMUQiIqGCcgRAVwAgllPHVwHnwhJRcCCWxfdgUXEiwBRCUDACFnXxd6IGIeXx0_En8fAS84KV8UQVRpIiFkUxEFF3gOHjZaFHo6SVsEYScODjwGHBw6HBBVHl4lHGAzdwE0dDo5YRIwbi4AXD0lLyhyGWYlHhc_N0U8dw4laVsiYFp1Chs1BT1GAl0aP2lZElAOQQwlYClzdSlwCgJiJCx9W2kjKzc7BlwmdFkrOSARfBR-BzcJWR1dDFE_PBUCcAEEVygcNggJd19QGFY3JBVBJWNePStaDkwYcVsJAhNyRxxgCgcnGxQHCnABHhBZCU46Rj4gNQ4dcB11MCkCIw9VDkIYFwAbNQEMQwUqFls3AgBaChcWPBJwCwNYLB8JAUEZYREMBl4xd1xGLC4SXylGP0FbIyQcDlMeYhwNPh4GfT9XCCchCgBxC3wPDTc9cUcMSyYKaBMLWi5FJCdgCihVAFouIxshCwEVA1EEIiAudAxQPQYgLA9zN2QTBCcdN0ZcBF88OTkWAVhpWTkZKnNiO18DKys7KGZefCceGggwYyZCL15oOAdZGQYqNxsRFm4deg9ZITsHYx5BHg0kAQIFP1s9JCsiKnIHcT0cFwAMfygEKj5gXA9DPlYMHgEgF2QZCxFfZyYDWTxpAgQXWxN-GwMTNgkfLHAcAz8GCB4WTCdJCFsFIzRiJEAYXAISAF4oUiwVNSh2cBlQEFs8Bgx7A0IRAiIMB0wEUholHigcTBtlUQwyWyJQGGIrPj4jFwUJZVoANxo9eysDDDkrOHVUXUI_LgU6Ln0KaSEOaQIPfjcBHTo2CQlDO0QPXDUkdE4PABNYYwkOdB9mGVsCUyV1KQQjKBoOIAA9eVAOBT0RDihlUQ0jUgpfNUpfVj5fAkcJCgUuGjxwcSJiUSo7ADNAPVEQNwY9cnQaVAgMNx4PXgRdEQYzPnJ5PUI_HAkoEl0uewgCBCA1XjV2Xjs5IQ10CUUjHDscEVgYd1kVHQYBdQhLKwMCGzdeC2ARFgA9J1UKWQRWYQQOcV9qOyATHAcPOFxeLAY5PFcUQypZaVIpYixxCFwVExdaHAYjJzI5EXlUfAUZJjgjQD9SWyodEQxXBH48JSRaKXknADM-JgUlTiZEIjphGS1FHkQxLCE_MUZVWg9bOigPf1hAExo5Ew9mP0IdDRUycFAISgUdIl0BXQx0JSY3Aw5DOFAROBMxCWEJSywdOhoofhdeBFowOhNBFEcZIDZdFk4lZAhfZiMwUjlYDCMAO3RDLwUiAgQFIgA-AiwWMix1WTpGJR1mAhUALEQmOjQHL10r/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="10 /zWa05NwcEzZOURonWBAOME5HRSQEDxM1TEBCPlkJCWgEAGJ2Mgw3MTRCfx0SVhsxUV9eGD0tECZRanIIPVEsGBR5cQABEDQZWQRgLAcEIC0KVncKHwUKLhACDR0ELk0jLkRROhsmHj0kZkwHFhdNERtDegcvKyokI0dzIiQ0ThIAREAJI1ofOTtXZhZDADU9IFQCHTISETkyAnAcDysWNDh4TTobDw0VD1ZXNEI2ThYPAWJ5JiZKAyl0UyEQCD0vEANsHkISTyFXVAEeRQwIBFRkcAhOJxszKWlsBRgwHCYbWE0AOVQ1OCZxQi8HCyIGFghtJBwzEwYRaHF2MhROAjF5T3obJAkQCmMCHzAAP2UvaGMeQhQ9HxBgTSs8OQsUNH1xBkMtQhgqB3o5BiJOIi9SWXcVUTUVFnsGeR0vCBxVaWMGPTIUPVZ5cnwdIiAUL0pRAk8BPBAweQwjAio9HSACTB4NXks=/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/zWa05NwcEzZOURonWBAOME5HRSQEDxM1TEBCPlkJCWgEAGJ2Mgw3MTRCfx0SVhsxUV9eGD0tECZRanIIPVEsGBR5cQABEDQZWQRgLAcEIC0KVncKHwUKLhACDR0ELk0jLkRROhsmHj0kZkwHFhdNERtDegcvKyokI0dzIiQ0ThIAREAJI1ofOTtXZhZDADU9IFQCHTISETkyAnAcDysWNDh4TTobDw0VD1ZXNEI2ThYPAWJ5JiZKAyl0UyEQCD0vEANsHkISTyFXVAEeRQwIBFRkcAhOJxszKWlsBRgwHCYbWE0AOVQ1OCZxQi8HCyIGFghtJBwzEwYRaHF2MhROAjF5T3obJAkQCmMCHzAAP2UvaGMeQhQ9HxBgTSs8OQsUNH1xBkMtQhgqB3o5BiJOIi9SWXcVUTUVFnsGeR0vCBxVaWMGPTIUPVZ5cnwdIiAUL0pRAk8BPBAweQwjAio9HSACTB4NXks=/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="12 /_8boG--rORdQQHUDHENxCVVAIUxbGzxXDEJ0H1VBbRYSASASSEIIACcACkt4ABVrB1omSx0dNG4oIS1cHSgYfihdEWJYOxt2FBwJYxVGCloSCB1XRhQdfAoJN1RcQGdrESJwWWIGO0wOKiNHaCQmcQMbcGtXARBxOicXXm8FGVQxOHNoTAYqfzZWIkN3FQxgVgwIR2wWaGsnHixDfkAaahonK050OidMDgMwb0MUPUJXOnNsQ0MIDzMqd3llNjlXBQQAVVxBBmhXHnJbGxZraFAANX4YJhp-WysmSWUrBnMNPCFcVxondixYCEJqMyhZEgcffFpKB1IJPy58XSobACcYc3h9OyUMDig0akYhaGklDAIfYyoJaFcYAGVcIiddKTU2bng_G3BWIX9iZkUQTxMuc1hjEDMBAF0Ib1o5bA8IIzVmGSsJcCg-KUcaOxgKCC4dbmMIO3RaDQFqfDtmVRcmAGdsT24=/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/_8boG--rORdQQHUDHENxCVVAIUxbGzxXDEJ0H1VBbRYSASASSEIIACcACkt4ABVrB1omSx0dNG4oIS1cHSgYfihdEWJYOxt2FBwJYxVGCloSCB1XRhQdfAoJN1RcQGdrESJwWWIGO0wOKiNHaCQmcQMbcGtXARBxOicXXm8FGVQxOHNoTAYqfzZWIkN3FQxgVgwIR2wWaGsnHixDfkAaahonK050OidMDgMwb0MUPUJXOnNsQ0MIDzMqd3llNjlXBQQAVVxBBmhXHnJbGxZraFAANX4YJhp-WysmSWUrBnMNPCFcVxondixYCEJqMyhZEgcffFpKB1IJPy58XSobACcYc3h9OyUMDig0akYhaGklDAIfYyoJaFcYAGVcIiddKTU2bng_G3BWIX9iZkUQTxMuc1hjEDMBAF0Ib1o5bA8IIzVmGSsJcCg-KUcaOxgKCC4dbmMIO3RaDQFqfDtmVRcmAGdsT24=/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="13 /NTBhMDljKjttGnlwW1x3YHJcfHJDDiEgbA8kIlM5AGkxD2sUAxlzIC0YazQLVyYgNhg-YV8ra2YETX8CGx05ejUYYzQAT3wSZBoreUoZOWlzW3tyShkmaXVedWIcCXM8Nhw9YV8ra2YETX8CGx05ejUYYzQAT3wSZBgsNlEcKyZnWwl2XFt4JXNNf3IKGCE6Ng0jIDoPPHFxLH9qXVtgZXVNf3IOCy0_JwYpEgkYa2cGW2N3XkR4cXBePjIFDmtnBgt4cFtefTYkRS92Wl1jZXMNemkOUno1b11_cVhafjEnXnVyDU98YjAJKS0DT30QNFlodloEIQc2CTktCE99EDYaOCFJWHgwIU1-AF5PfGIsBmh3KFtrZnQJLCZeT30Qc049KFEFOjwnGms2CQEnMH9fenFbTD4iKwxwcFlZfm11CnsiCVh4bXBQeyBdCHdyNFV4alg=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/NTBhMDljKjttGnlwW1x3YHJcfHJDDiEgbA8kIlM5AGkxD2sUAxlzIC0YazQLVyYgNhg-YV8ra2YETX8CGx05ejUYYzQAT3wSZBoreUoZOWlzW3tyShkmaXVedWIcCXM8Nhw9YV8ra2YETX8CGx05ejUYYzQAT3wSZBgsNlEcKyZnWwl2XFt4JXNNf3IKGCE6Ng0jIDoPPHFxLH9qXVtgZXVNf3IOCy0_JwYpEgkYa2cGW2N3XkR4cXBePjIFDmtnBgt4cFtefTYkRS92Wl1jZXMNemkOUno1b11_cVhafjEnXnVyDU98YjAJKS0DT30QNFlodloEIQc2CTktCE99EDYaOCFJWHgwIU1-AF5PfGIsBmh3KFtrZnQJLCZeT30Qc049KFEFOjwnGms2CQEnMH9fenFbTD4iKwxwcFlZfm11CnsiCVh4bXBQeyBdCHdyNFV4alg=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="14 /ODMyZTNjPS9iHjsyYAA8ez8PZ2VoGCovJB0paXldenNrCjRpPQ1pG3BLaGV5XHhiawkyICMGcjM6DnQjPkQ_KGJfCgMPGTh5fEpsYmg6GAU-EWdjeFJpIj8WNxMhBSgoKERqcj0aJipwHjsyaAgsMnBLfAtzNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBs=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/ODMyZTNjPS9iHjsyYAA8ez8PZ2VoGCovJB0paXldenNrCjRpPQ1pG3BLaGV5XHhiawkyICMGcjM6DnQjPkQ_KGJfCgMPGTh5fEpsYmg6GAU-EWdjeFJpIj8WNxMhBSgoKERqcj0aJipwHjsyaAgsMnBLfAtzNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBsSJgULETUQGxImBQsRNRAbEiYFCxE1EBs=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="15 /MDlhOWRhKStDGn1lZlt-cl5efWR9Dj4nQg8mMW07A3kfD2k2MRwkKwJVOyUzDistD04_MG8AOTAcG2pkE01_AklaCSAlH2MzHEY_O3daC2IeDnJxIR9wdV9eeXEhAHBzWlBpJzFVJTAYGGpkE01_AklaCSAlH2MzHEY_O3daC2IcCT1qJA0_YV8sfWdjXjx1SVp5MSAHIzAJBisBNxpodyhaYWZjRnxzSVp5NTMLJiECDBkyIE1-AF9GfGV8Xmh2Whs5PjZNfgAPXXtgZlsvIkEKfWFlRXx1CV9iNWpcLGlZWnpjYlgoIVpQeTZ3Wns2DQwmOHdbCTJdTX1hPAceMA0cJjN3WwkwHh0qcmBeKSdJWwtld1p7KgJNfBNjTX9yDQktZXdbCXVKASEhNwY5Kx4RcnJlKmh2Xhw9NjQOJCdJWn1yYSlocS5NeBV3Wn8XIk19ZXdbDGFeWjwwd1p_YV4ramVgCS4wBQchcmBaaHctTX1lJAAvNgkZOjIhHGh2Xk19FHdafzQNGmplYE1-BUlfDXJgWi8tCAwqJXdaf2FfKWplYB8kIAkHPTU7HGh2Xk19FHdafyYFDCYzd1p_YV8pamVgHyQgCQc9NTscYHVZWHdmZ1x5cFlYeWB_XH93Xk19ZXdaDmFeWj87MxEoNh9NfWV3WwxhXlp_cmBaaHMoTXgTd10JYVssaTA_ASl5DwcYNjELehZCEAc8fBA3LD4rYRs1GBwOX1AAEAUSOD0jKTchO1AYBTgpPXkhX2s0AFUgIzoNP2IeDSQ-NlV6c1lfaSckASl5WF18Z2tfL3IKDX1ha1p1cghZLW50HnBxQlw=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/MDlhOWRhKStDGn1lZlt-cl5efWR9Dj4nQg8mMW07A3kfD2k2MRwkKwJVOyUzDistD04_MG8AOTAcG2pkE01_AklaCSAlH2MzHEY_O3daC2IeDnJxIR9wdV9eeXEhAHBzWlBpJzFVJTAYGGpkE01_AklaCSAlH2MzHEY_O3daC2IcCT1qJA0_YV8sfWdjXjx1SVp5MSAHIzAJBisBNxpodyhaYWZjRnxzSVp5NTMLJiECDBkyIE1-AF9GfGV8Xmh2Whs5PjZNfgAPXXtgZlsvIkEKfWFlRXx1CV9iNWpcLGlZWnpjYlgoIVpQeTZ3Wns2DQwmOHdbCTJdTX1hPAceMA0cJjN3WwkwHh0qcmBeKSdJWwtld1p7KgJNfBNjTX9yDQktZXdbCXVKASEhNwY5Kx4RcnJlKmh2Xhw9NjQOJCdJWn1yYSlocS5NeBV3Wn8XIk19ZXdbDGFeWjwwd1p_YV4ramVgCS4wBQchcmBaaHctTX1lJAAvNgkZOjIhHGh2Xk19FHdafzQNGmplYE1-BUlfDXJgWi8tCAwqJXdaf2FfKWplYB8kIAkHPTU7HGh2Xk19FHdafyYFDCYzd1p_YV8pamVgHyQgCQc9NTscYHVZWHdmZ1x5cFlYeWB_XH93Xk19ZXdaDmFeWj87MxEoNh9NfWV3WwxhXlp_cmBaaHMoTXgTd10JYVssaTA_ASl5DwcYNjELehZCEAc8fBA3LD4rYRs1GBwOX1AAEAUSOD0jKTchO1AYBTgpPXkhX2s0AFUgIzoNP2IeDSQ-NlV6c1lfaSckASl5WF18Z2tfL3IKDX1ha1p1cghZLW50HnBxQlw=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="16 /do/r1508154445/dotn" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="sw" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">sw</stringProp>
+                  <stringProp name="Argument.value">1366</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sh" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">sh</stringProp>
+                  <stringProp name="Argument.value">768</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="v" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">v</stringProp>
+                  <stringProp name="Argument.value">5.4</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pvid</stringProp>
+                  <stringProp name="Argument.value">453097b6fe269286d1b9</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pc</stringProp>
+                  <stringProp name="Argument.value">http%3A%2F%2Fwww.wp.pl%2F</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pl" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pl</stringProp>
+                  <stringProp name="Argument.value">other</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Pos" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">Pos</stringProp>
+                  <stringProp name="Argument.value">top</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="SN" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">SN</stringProp>
+                  <stringProp name="Argument.value">sg</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pg" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pg</stringProp>
+                  <stringProp name="Argument.value">https%3A%2F%2Fwww.wp.pl%2F</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="par" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">par</stringProp>
+                  <stringProp name="Argument.value">ver%3D2016q1%26frontendVer%3D2.11.17%26backendVer%3D3.32.6%26svid%3Dc54743bf-b267-11e7-b84a-525400ee686a%26radio%3Dv1%26noStatid%3Dtrue%26dc%3D2%26nn%3D1%26aab2%3D1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rf" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">rf</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rekid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">rekid</stringProp>
+                  <stringProp name="Argument.value">7757</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/do/r1508154445/dotn</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="18 /MjE2ZjIwLA5qYBdFKBM-RSRWKR47EiwHGl4iRCgTPkUyRS1EPgdjGikdPQYmACMLa1ouByVYAVh0HWhaeER4WnwFa1JmD31can07GQ0SKwswXi5FeEZ0WXADBVh8Q3pfcQMFOigZKAYVQD8HIAIgNTZVDToWOggyGgJrRX1GeF0hBD4PfRR0WxpeOxo9GD01IUAvASgFJgtrWi4HJVh6WXEFbA59FHlccARsD38Vew9xB2lafUZ5WHIAbg96R3IaM1s-V31Cflp8BThcLxJ_XHwAYlwtRi9TY0I5VyEDORpgARtPezFoWANFLR1nAD1ENV5_WA9ROhovQSxXe1l_RHMAfAsoFXBYY20IJxYyADoRawU=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/MjE2ZjIwLA5qYBdFKBM-RSRWKR47EiwHGl4iRCgTPkUyRS1EPgdjGikdPQYmACMLa1ouByVYAVh0HWhaeER4WnwFa1JmD31can07GQ0SKwswXi5FeEZ0WXADBVh8Q3pfcQMFOigZKAYVQD8HIAIgNTZVDToWOggyGgJrRX1GeF0hBD4PfRR0WxpeOxo9GD01IUAvASgFJgtrWi4HJVh6WXEFbA59FHlccARsD38Vew9xB2lafUZ5WHIAbg96R3IaM1s-V31Cflp8BThcLxJ_XHwAYlwtRi9TY0I5VyEDORpgARtPezFoWANFLR1nAD1ENV5_WA9ROhovQSxXe1l_RHMAfAsoFXBYY20IJxYyADoRawU=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="17 /YmM1MWI5MAxiUGI-ZkYtCmJGPT06WTAPYFwiMzobMx5ybnAIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjI=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/YmM1MWI5MAxiUGI-ZkYtCmJGPT06WTAPYFwiMzobMx5ybnAIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjISbhIIFmoGMhJuEggWagYyEm4SCBZqBjI=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="19 /OGFmMTNlLiNpPwB7Lwg8aCcJPiA8CS4qGQE1ei8IPGgxGjp6ORxhNypCKjghGyEmaAU5OSJDA3V3Qnxidl16cHBUemRhFHp-aSIsJwoJKSYzATl7f113fndYEmZ7WHl3clkSDi8ALikiAhIdJQMhJhk3LDgvAisoGT4KCxk8EHd3QnljeVp5c3NadWV3X3hwfl56YHlbd3JxWH9jdlR6cXVadGF9XXhpLhkgOGFbfHNxWylgLVh5cnBbKGIsWipzc159YH9YfXB0WShnflM_MS8JcGB7X39-cQ97MiteeX50VXswfw52YTYOcDw6GD9idSxoZghJfQExGjp6ORxhNypIfxJoGz8tNRtwZmBeYXF0Syw1LFF9YRk_AAsLIR8THzI=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/OGFmMTNlLiNpPwB7Lwg8aCcJPiA8CS4qGQE1ei8IPGgxGjp6ORxhNypCKjghGyEmaAU5OSJDA3V3Qnxidl16cHBUemRhFHp-aSIsJwoJKSYzATl7f113fndYEmZ7WHl3clkSDi8ALikiAhIdJQMhJhk3LDgvAisoGT4KCxk8EHd3QnljeVp5c3NadWV3X3hwfl56YHlbd3JxWH9jdlR6cXVadGF9XXhpLhkgOGFbfHNxWylgLVh5cnBbKGIsWipzc159YH9YfXB0WShnflM_MS8JcGB7X39-cQ97MiteeX50VXswfw52YTYOcDw6GD9idSxoZghJfQExGjp6ORxhNypIfxJoGz8tNRtwZmBeYXF0Syw1LFF9YRk_AAsLIR8THzI=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="20 /MzZkZmM1LB51ORdCLFU-VTsPKRk_VCwXBQciQyxVPlUtHC1DOkFjCjZEPQEiRiMbdAMuACEeAUhrRGlUeAN_SmJfaEI1CXxVFQopKShXLA82H3VcfAl7TWM0aFh5BH9DbTQSAiBULxU1AAUhJF8mJS4TLjIaWCweNQY1Hi5YYkxtU21aegh6Q2lZb1VjWTkXNkRtXnkGex5uCG5beAd7H2wJbAh5BH5KblpuX3oDeR9pW2UdO1gpR25eaV10Bi9MPA5oW3QDdUw-WjhUa0EuRzIfLh1oAgxfaC1_XwtGOg10HCpDPV1oSBxNLR0nQjtHaEVoQ3sDaxs7CWdfa24fNwUuFz0ZaBI=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/MzZkZmM1LB51ORdCLFU-VTsPKRk_VCwXBQciQyxVPlUtHC1DOkFjCjZEPQEiRiMbdAMuACEeAUhrRGlUeAN_SmJfaEI1CXxVFQopKShXLA82H3VcfAl7TWM0aFh5BH9DbTQSAiBULxU1AAUhJF8mJS4TLjIaWCweNQY1Hi5YYkxtU21aegh6Q2lZb1VjWTkXNkRtXnkGex5uCG5beAd7H2wJbAh5BH5KblpuX3oDeR9pW2UdO1gpR25eaV10Bi9MPA5oW3QDdUw-WjhUa0EuRzIfLh1oAgxfaC1_XwtGOg10HCpDPV1oSBxNLR0nQjtHaEVoQ3sDaxs7CWdfa24fNwUuFz0ZaBI=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="21 /Yw6BnBU0P1gEbVxsZAF3RgFtCicmWy0YRmwDKzseMwQJJ14VbXU2OlAXHAgGVWwWUHIBKQN6Fx1HcjQFE3prIXk3JwYbRio5eHpaFzdAPi1MKQgAEVg_B08zXHoGQxRAQg0aJiFcHBNcBzg7HFEtQHA4HQ0caBEnRQAZBDljDkNzIxo3EmRgElgYCRENBDo4XAMKdQZ1KBxYEVwHB0gRG1UbJjohXDUAdCwIIC8FDEN3LF8VYmEcR2IKKiQ6VzIwTjNdGwUFKEJAdAp2BQI2BWV3OgcTCR0WUgo3Gx5fChFHOAY6G35uOFkFLzU0QDEvZzVWGj9bCR5nMjYGbXUuQ2MSJzhhXB4EcSk9dQR3OjIEDDYUBQUuMH4zPjowewMGdRcjBh0EF095CVkNIkEYQ0MMDC5sUms4dDUlcWJaFQV9djcUHXoIGVx1JwVnWhgtdQwUJhkIOzFxEyd7OEUQMHwDXDsFDWg=/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Yw6BnBU0P1gEbVxsZAF3RgFtCicmWy0YRmwDKzseMwQJJ14VbXU2OlAXHAgGVWwWUHIBKQN6Fx1HcjQFE3prIXk3JwYbRio5eHpaFzdAPi1MKQgAEVg_B08zXHoGQxRAQg0aJiFcHBNcBzg7HFEtQHA4HQ0caBEnRQAZBDljDkNzIxo3EmRgElgYCRENBDo4XAMKdQZ1KBxYEVwHB0gRG1UbJjohXDUAdCwIIC8FDEN3LF8VYmEcR2IKKiQ6VzIwTjNdGwUFKEJAdAp2BQI2BWV3OgcTCR0WUgo3Gx5fChFHOAY6G35uOFkFLzU0QDEvZzVWGj9bCR5nMjYGbXUuQ2MSJzhhXB4EcSk9dQR3OjIEDDYUBQUuMH4zPjowewMGdRcjBh0EF095CVkNIkEYQ0MMDC5sUms4dDUlcWJaFQV9djcUHXoIGVx1JwVnWhgtdQwUJhkIOzFxEyd7OEUQMHwDXDsFDWg=/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="22 /ZjY1NDllPgV2Q3ZzWFRjUmkCeHNDHzIFLh8pLQpTKRgvDD0jSg05HjBeIHkeCTQOPEMrIDMLNgU3VDk3Shw9VzFFOjQfSWkrfAMIYV4qLR0uHzk0Qhw2T2t3aDYKUXwZLgx_d1pafBkxDHlyVEoqCWRZOjAcSWkrfAMIYV4qLR0uHzk0Qhw2T2t3aDQNHmccPENrdyhealtvQH9iCwEzDmRSIRMNDzldCx82DAdCIhAxYw1qIAsqOxMCdgsrOyAfIH4PPBoFYj8YZQ82Qh9tTCldcysYBD8Yf0MrLwUIZ11uBHliHBozDmQFe3dcVW0Ib1crdlpVaFJvVX8mVUosV2wfeg==" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/ZjY1NDllPgV2Q3ZzWFRjUmkCeHNDHzIFLh8pLQpTKRgvDD0jSg05HjBeIHkeCTQOPEMrIDMLNgU3VDk3Shw9VzFFOjQfSWkrfAMIYV4qLR0uHzk0Qhw2T2t3aDYKUXwZLgx_d1pafBkxDHlyVEoqCWRZOjAcSWkrfAMIYV4qLR0uHzk0Qhw2T2t3aDQNHmccPENrdyhealtvQH9iCwEzDmRSIRMNDzldCx82DAdCIhAxYw1qIAsqOxMCdgsrOyAfIH4PPBoFYj8YZQ82Qh9tTCldcysYBD8Yf0MrLwUIZ11uBHliHBozDmQFe3dcVW0Ib1crdlpVaFJvVX8mVUosV2wfeg==</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="24 /ZDc2NTViPitMQHpsb1tsdlUAf2N5GjIrFBwpPTBWKTYVDz0zcAg5MApdIGkhDDg0FkEmciYOZywXRj4nc1obYVF0a2YQHi0zTUU-eiYFf3YlFDwya08pM14DfWJgTyksXgV4bHAZOXkLRjokc1obYVF0a2YQHi0zTUU-eiYFf3YlFD41JFQ_MgZcOnFlLTkoDEErcWRfPygGXys6IkxpAC9TIDA_Bz1hUQQ9IDcdP2FQdj0gJAgzIwtGa2ZgHTsjRgEKJD8FNCE8RSc1MgY3KxBRJ3IxBDMgXlEhAzcKOXMxHDYcPUciPgtgDXoaDioVKQF2GxE-IDEafQ8sIABiESJmDyZ4Gm1iE15zOyIBPzZFQCs_Pw1nc1QHeXImHzMgXgZ7Z2ZQbSZVVCtmYFBofFVWfzZvTyx5Vhx6" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/ZDc2NTViPitMQHpsb1tsdlUAf2N5GjIrFBwpPTBWKTYVDz0zcAg5MApdIGkhDDg0FkEmciYOZywXRj4nc1obYVF0a2YQHi0zTUU-eiYFf3YlFDwya08pM14DfWJgTyksXgV4bHAZOXkLRjokc1obYVF0a2YQHi0zTUU-eiYFf3YlFD41JFQ_MgZcOnFlLTkoDEErcWRfPygGXys6IkxpAC9TIDA_Bz1hUQQ9IDcdP2FQdj0gJAgzIwtGa2ZgHTsjRgEKJD8FNCE8RSc1MgY3KxBRJ3IxBDMgXlEhAzcKOXMxHDYcPUciPgtgDXoaDioVKQF2GxE-IDEafQ8sIABiESJmDyZ4Gm1iE15zOyIBPzZFQCs_Pw1nc1QHeXImHzMgXgZ7Z2ZQbSZVVCtmYFBofFVWfzZvTyx5Vhx6</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="25 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="23 /NGViNDNhKih5G3x0eV53f2Nff3VhGyYoIUcpLShXPTUgVD0jaAktMz8GIHk5DSw3IxomYj4Pcy8iHT43a1sPYmQva3YIHzkweB4-aj4Ea3UQTzwic049MGtYfXJ4Tj0va154fGgYLXo-HTo0a1sPYmQva3YIHzkweB4-aj4Ea3UQTz4lPFUrMTMHOmF9LD0vOR4gYXxeKyszBCsqOk19AxoIICAnBiliZF89MC8cK2JlLT0wPAknID4da3Z4HC8gc1oKNCcEICIJHiclKgcjKCUKJ2IpBScjawohEy8LLXAERzYMJUY2PT47DWoCDz4WHFp2Cwk_NDIvJg88OAF2Ehc9DzZgG3lhJgVzKzoAKzVwGysvJwxzcGFceWI-Hicja117d35ReSVgDyt2eFF8f2ANfyZ3Tjh6Y0d6" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/NGViNDNhKih5G3x0eV53f2Nff3VhGyYoIUcpLShXPTUgVD0jaAktMz8GIHk5DSw3IxomYj4Pcy8iHT43a1sPYmQva3YIHzkweB4-aj4Ea3UQTzwic049MGtYfXJ4Tj0va154fGgYLXo-HTo0a1sPYmQva3YIHzkweB4-aj4Ea3UQTz4lPFUrMTMHOmF9LD0vOR4gYXxeKyszBCsqOk19AxoIICAnBiliZF89MC8cK2JlLT0wPAknID4da3Z4HC8gc1oKNCcEICIJHiclKgcjKCUKJ2IpBScjawohEy8LLXAERzYMJUY2PT47DWoCDz4WHFp2Cwk_NDIvJg88OAF2Ehc9DzZgG3lhJgVzKzoAKzVwGysvJwxzcGFceWI-Hicja117d35ReSVgDyt2eFF8f2ANfyZ3Tjh6Y0d6</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/css,*/*;q=0.1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="26 /f/2/2.11.17/08aa377d29d76ad98c78.5.chunk.js" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/f/2/2.11.17/08aa377d29d76ad98c78.5.chunk.js</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="27 /OneSignalSDKWorker.js" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/OneSignalSDKWorker.js</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Service-Worker" elementType="Header">
+                  <stringProp name="Header.name">Service-Worker</stringProp>
+                  <stringProp name="Header.value">script</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="28 /f/2/2.11.17/b99d5c8a1fdefc52068e.wp24-desktop.chunk.js" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/f/2/2.11.17/b99d5c8a1fdefc52068e.wp24-desktop.chunk.js</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="29 /MjUxMjYwPwF6HywMdx0-VScOcFt_BSgBPBw-V25AeF1zCyNXKhBrNWhKdFJoT3xMcwglHjQbcB0iD2MdKVk9BnpeHT0YBDpXZEt7XH8nGismEHBdb09rDCcXIC02GCoGMEV9TD8bPh40DCQOZEFrOgI5Egk1KD4eJ0V8W2BGdVsKSnhYakZ6NRE9HiENOB01Jh8SHSkoFyMUMgw1KhQ_NWVJEisdNQFPZzt8W2BEeFsKSnhebkJ5WwooLAQ8Gx0YMBUkHzQoPg0CKBInHC8SWmRdfyloR3hfbUsSWGxFdVhiThIiPAUiMDAKIjU6GCMeMBY5KDYPHhowGycLNRk0NRQ0ATVpRmhYFkl8UmlFfjVnTXlTaUd5NRYXIxw2HCg1Bj8SHSkVIhJ4DyQLPRggBSYbJDVpRWhYFkl8UmhGeTVnTX5bbEcSLzoaOB0wEhI9BToiEgYkPQUnDCIdPDEsASEBElprUn8pZEh0UmBEElhgSHxcaCgJLwYzGSUJKAEDMRQSOR4oOhoKGiISPx4jCzsLKDVoQWBbbScMLhs7aFgWSXxTYUR8NWdNeVNpR3o1GBc_AyMYIzU2Gj4aNgU5NTQcLwY2FCY1FjoeOhYlGTVlSmhYGkZ8U21IeDVrQnlSbEx-NRo1FTUTESMLNwQoNRkZIw4GJSIcMAoSLB8oPh40DCQJBkd8T2c7fFtgRX9bCkp4Xm5GfVgKCyo1LgcSODQRIwg2ABIpFycgAyEofVtwSg5baE5-XmUnf19tQHlZbSc-DQYeOQs-GRIHMA8SWmRdfyloRnRZYEkSWGxDel9gThIpGy8SOSEBITUUEikDNCcIEikSPx4KPgs1KgMsHjwbElprUn8pZEl0XmxPElhgTHpSbE4SLTkXLws1Rn01Nxc1LS4eLBAxARJaaFJ_KWRJdFlgQxJYYEx6XGtDEhkyJwQkDSUILhonLwUhKD8FIRkuEzMZNDVlSWhYGkZ8UmxJeTVrQnlcZUl1NRsYIxonETU1Gxg1NScXOQs6DicELCcKHTAWNw4sXX8paEZ0UmZKElhsQ3RaZUESJTQVPw8KKwo1PQ0kDzkXIxN0GiIeOid9W3xFDltkT3Rabyh_X2FKdFxvKB4TOx0_EwY6KA48GRIoNRYuAiwnHRgsBDcTOwsmAwYVIhI4DBIYNgMsCT8ZElpoUn8pZEl1U2hDElhgTHtaaE4SKDoWPRgwDxIoOgASGDYDLAksEiMTBjoiHjpdfyloRnVfZ0kSWGxDeVJkTBIuNhoiDjwnDwUhKD8FIRkuEzMZNDUGDDQGAw4uAzRdfyloRnVcYkESWGxDeFhtTxIiNhooCDoXJjUbGDU5IQEhMCAUJAtwSg5baE51WWcnf19tTn1bZScCBzsFKDUGPxIPOjssGDIdElpoUn8pZEl1U2hDElhgTHtaaEQSKDoWPRgwDxIvNjQsGD4SaFgWSXxSb0B0NWdNeV9rT3k1HRcgDzsYIgEKPS4mOAUqD3BKDltoT3hYZCd_X21DdVpjJwkFNBgpAwo9LiY4BSoPcEoOW2lOelliJ39eYEB9WQo5Ph4rFjkPLScICRsYNSc0ABIsHyh9W3BKDltoT3RbYCd_X21BfV5hJxcLNRYjDjonBAE2GSw1DxkhCzcTIjUGPxI9CSh9W3BKDltoT3RbYCd_X21BfV9hJxcLNRYjDjonDw81HCw1Bj8SPQkofVtwSg5baE55Um0nf19tQHRSbSc-DQYYJgQ6CCELKgMSDDkXLB4GR3xPZzt8W2FBelMKSnhebEV0XQowIgc8FSIFPicBAzccEh4tDBI9MBYpBTgXPgkwUn8pZEl1U2hDElhgTHtaa0ESKDoWPRgwDxIsORcsHjAZKjU9GSEMKRYqDworCjUOJ2sLMQ4eBjYDPldlTXtPazR9X2JePhowGXANNB5rCDoBcFg=" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/MjUxMjYwPwF6HywMdx0-VScOcFt_BSgBPBw-V25AeF1zCyNXKhBrNWhKdFJoT3xMcwglHjQbcB0iD2MdKVk9BnpeHT0YBDpXZEt7XH8nGismEHBdb09rDCcXIC02GCoGMEV9TD8bPh40DCQOZEFrOgI5Egk1KD4eJ0V8W2BGdVsKSnhYakZ6NRE9HiENOB01Jh8SHSkoFyMUMgw1KhQ_NWVJEisdNQFPZzt8W2BEeFsKSnhebkJ5WwooLAQ8Gx0YMBUkHzQoPg0CKBInHC8SWmRdfyloR3hfbUsSWGxFdVhiThIiPAUiMDAKIjU6GCMeMBY5KDYPHhowGycLNRk0NRQ0ATVpRmhYFkl8UmlFfjVnTXlTaUd5NRYXIxw2HCg1Bj8SHSkVIhJ4DyQLPRggBSYbJDVpRWhYFkl8UmhGeTVnTX5bbEcSLzoaOB0wEhI9BToiEgYkPQUnDCIdPDEsASEBElprUn8pZEh0UmBEElhgSHxcaCgJLwYzGSUJKAEDMRQSOR4oOhoKGiISPx4jCzsLKDVoQWBbbScMLhs7aFgWSXxTYUR8NWdNeVNpR3o1GBc_AyMYIzU2Gj4aNgU5NTQcLwY2FCY1FjoeOhYlGTVlSmhYGkZ8U21IeDVrQnlSbEx-NRo1FTUTESMLNwQoNRkZIw4GJSIcMAoSLB8oPh40DCQJBkd8T2c7fFtgRX9bCkp4Xm5GfVgKCyo1LgcSODQRIwg2ABIpFycgAyEofVtwSg5baE5-XmUnf19tQHlZbSc-DQYeOQs-GRIHMA8SWmRdfyloRnRZYEkSWGxDel9gThIpGy8SOSEBITUUEikDNCcIEikSPx4KPgs1KgMsHjwbElprUn8pZEl0XmxPElhgTHpSbE4SLTkXLws1Rn01Nxc1LS4eLBAxARJaaFJ_KWRJdFlgQxJYYEx6XGtDEhkyJwQkDSUILhonLwUhKD8FIRkuEzMZNDVlSWhYGkZ8UmxJeTVrQnlcZUl1NRsYIxonETU1Gxg1NScXOQs6DicELCcKHTAWNw4sXX8paEZ0UmZKElhsQ3RaZUESJTQVPw8KKwo1PQ0kDzkXIxN0GiIeOid9W3xFDltkT3Rabyh_X2FKdFxvKB4TOx0_EwY6KA48GRIoNRYuAiwnHRgsBDcTOwsmAwYVIhI4DBIYNgMsCT8ZElpoUn8pZEl1U2hDElhgTHtaaE4SKDoWPRgwDxIoOgASGDYDLAksEiMTBjoiHjpdfyloRnVfZ0kSWGxDeVJkTBIuNhoiDjwnDwUhKD8FIRkuEzMZNDUGDDQGAw4uAzRdfyloRnVcYkESWGxDeFhtTxIiNhooCDoXJjUbGDU5IQEhMCAUJAtwSg5baE51WWcnf19tTn1bZScCBzsFKDUGPxIPOjssGDIdElpoUn8pZEl1U2hDElhgTHtaaEQSKDoWPRgwDxIvNjQsGD4SaFgWSXxSb0B0NWdNeV9rT3k1HRcgDzsYIgEKPS4mOAUqD3BKDltoT3hYZCd_X21DdVpjJwkFNBgpAwo9LiY4BSoPcEoOW2lOelliJ39eYEB9WQo5Ph4rFjkPLScICRsYNSc0ABIsHyh9W3BKDltoT3RbYCd_X21BfV5hJxcLNRYjDjonBAE2GSw1DxkhCzcTIjUGPxI9CSh9W3BKDltoT3RbYCd_X21BfV9hJxcLNRYjDjonDw81HCw1Bj8SPQkofVtwSg5baE55Um0nf19tQHRSbSc-DQYYJgQ6CCELKgMSDDkXLB4GR3xPZzt8W2FBelMKSnhebEV0XQowIgc8FSIFPicBAzccEh4tDBI9MBYpBTgXPgkwUn8pZEl1U2hDElhgTHtaa0ESKDoWPRgwDxIsORcsHjAZKjU9GSEMKRYqDworCjUOJ2sLMQ4eBjYDPldlTXtPazR9X2JePhowGXANNB5rCDoBcFg=</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="30 /f/2/2.11.17/7e2b9f2af6d28dafb630.radio-desktop.chunk.js" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">www.wp.pl</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/f/2/2.11.17/7e2b9f2af6d28dafb630.radio-desktop.chunk.js</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://www.wp.pl/</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="31 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="32 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="33 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="34 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="35 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="36 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="37 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="38 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="39 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="40 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="41 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="42 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="43 /success.txt" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">detectportal.firefox.com</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/success.txt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">pl,en-US;q=0.7,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="Brudnopis" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="Serwer proxy HTTP" enabled="true">
+        <stringProp name="ProxyControlGui.port">8080</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list"/>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">true</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+      </ProxyControl>
+      <hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">2000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
